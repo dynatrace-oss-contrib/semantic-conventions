@@ -19,7 +19,7 @@ This group defines the attributes for [Version Control Systems (VCS)](https://en
 | <a id="vcs-repository-ref-type" href="#vcs-repository-ref-type">`vcs.repository.ref.type`</a> | string | The type of the [reference](https://git-scm.com/docs/gitglossary#def_ref) in the repository. | `branch`; `tag` | ![Experimental](https://img.shields.io/badge/-experimental-blue) |
 | <a id="vcs-repository-url-full" href="#vcs-repository-url-full">`vcs.repository.url.full`</a> | string | The [URL](https://en.wikipedia.org/wiki/URL) of the repository providing the complete address in order to locate and identify the repository. | `https://github.com/opentelemetry/open-telemetry-collector-contrib`; `https://gitlab.com/my-org/my-project/my-projects-project/repo` | ![Experimental](https://img.shields.io/badge/-experimental-blue) |
 
-**[1]:** The revision can be a full [hash value (see glossary)](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf),
+**[1] `vcs.repository.ref.revision`:** The revision can be a full [hash value (see glossary)](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf),
 of the recorded change to a ref within a repository pointing to a
 commit [commit](https://git-scm.com/docs/git-commit) object. It does
 not necessarily have to be a hash; it can simply define a
