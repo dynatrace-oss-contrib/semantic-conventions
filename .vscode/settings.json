@@ -1,8 +1,12 @@
 {
     "editor.rulers": [80],
     "yaml.schemas": {
-        "https://raw.githubusercontent.com/open-telemetry/weaver/v0.16.1/schemas/semconv.schema.json": [
-            "model/**/*.yaml"
+        "https://raw.githubusercontent.com/open-telemetry/weaver/v0.17.0/schemas/semconv.schema.json": [
+            "model/**/*.yaml",
+            "!model/**/sig.yaml"
+        ],
+        "./.vscode/sigs-schema.json": [
+            "model/**/sig.yaml"
         ]
     },
     "json.schemaDownload.enable": true,
