@@ -52,7 +52,7 @@
                 "inactive"
               ]
             },
-            "description": "A list of predefined labels representing the SIG's states or needs."
+            "description": "A list of predefined labels representing the SIG's state or needs."
           },
           "areas": {
             "type": "array",
