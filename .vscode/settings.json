@@ -4,7 +4,7 @@
         "https://raw.githubusercontent.com/open-telemetry/weaver/v0.17.0/schemas/semconv.schema.json": [
             "model/**/*.yaml"
         ],
-        "./.vscode/sigs-schema.json": [
+        "./sigs-schema.json": [
             "sigs.yaml"
         ]
     },

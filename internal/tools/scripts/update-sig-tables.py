@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import pip
+import subprocess
 import sys
 
 # in the Makefile we use a unmodified python container to run this script, so we need to install pyyaml if it's not already installed
 if (len(sys.argv) > 1) and (sys.argv[1] == "--install"):
-    pip.main(['install', 'pyyaml'])
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pyyaml', '--root-user-action=ignore'])
     sys.argv = sys.argv[1:]
 
 import yaml
@@ -14,7 +14,7 @@ run_in_check_mode = (len(sys.argv) > 1) and (sys.argv[1] == "--check")
 
 # Define the YAML input file and the markdown file to be updated
 yaml_input = "sigs.yaml"
-markdown_file = "SIGS.md"
+markdown_file = "SIGs.md"
 
 # Define the markers
 start_marker = "<!-- sigs -->"
@@ -42,9 +42,13 @@ for sig in data['sigs']:
     notes = sig['notes']
 
     owners = ",<br/>".join(
-        [f"[{owner['name']}](https://github.com/orgs/open-telemetry/teams/{owner['github']})"
-         for owner in sig.get('owner', [])
-         if owner.get('name') and owner.get('github')]
+        [
+            f"[{owner['name']}](https://github.com/orgs/open-telemetry/teams/{owner['github']})"
+            if owner['type'] == 'team-user'
+            else f"[{owner['name']}](https://github.com/{owner['github']})"
+            for owner in sig.get('owner', [])
+            if owner.get('name') and owner.get('github') and owner.get('type')
+        ]
     )
 
     labels = ", ".join(

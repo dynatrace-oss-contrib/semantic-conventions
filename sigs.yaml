@@ -3,6 +3,7 @@ sigs:
     owner:
       - name: "semconv-k8s-approvers"
         github: semconv-k8s-approvers
+        type: team-user
     project: "https://github.com/open-telemetry/community/blob/main/projects/k8s-semconv.md"
     board: "https://github.com/orgs/open-telemetry/projects/114/views/1"
     areas:
@@ -10,23 +11,7 @@ sigs:
       - area:container
     labels:
       - accepting_contributions
-      - needs_prototyping
-    directories:
-      - /model/k8s/
-      - /model/containers/
-    notes: "The SIG is looking for contributions!"
-  - name: "Test"
-    owner:
-      - name: "something"
-        github: something
-    project: "https://github.com/open-telemetry/community/blob/main/projects/k8s-semconv.md"
-    board: "https://github.com/orgs/open-telemetry/projects/114/views/1"
-    areas:
-      - area:k8s
-      - area:container
-    labels:
-      - accepting_contributions
-      - needs_prototyping
+      - active
     directories:
       - /model/k8s/
       - /model/containers/
