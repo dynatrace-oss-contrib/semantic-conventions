@@ -1,16 +1,3 @@
-const fs = require('fs');
-const YAML = require('yaml');
-
-function getAllAreas(core) {
-    try {
-        const fileContent = fs.readFileSync('./areas.yaml', 'utf8');
-        const data = YAML.parse(fileContent);
-        return data.areas;
-    } catch (error) {
-        core.setFailed(`Failed to parse areas.yaml: ${error.message}`);
-    }
-}
-
 function isAreaActive(area) {
     return area.status.includes('accepting_contributions') || area.status.includes('active');
 }
@@ -35,7 +22,6 @@ function getActiveAreasWithCodeOwners(areas) {
 }
 
 module.exports = {
-    getAllAreas: getAllAreas,
     isAreaActive: isAreaActive,
     getActiveAreasWithCodeOwners: getActiveAreasWithCodeOwners
 };
